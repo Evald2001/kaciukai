@@ -29,7 +29,7 @@ noButton.addEventListener("click", function () {
 function handleTepClick() {
   titleElement.innerHTML = "Yayyy!! :3";
   buttonsContainer.classList.add("hidden");
-  changeImage("Tep");
+  changeImage("yes");
 }
 
 function resizeTepButton() {
