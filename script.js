@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const yesButton = document.querySelector(".btn--Tep");
-const noButton = document.querySelector(".btn--Nou");
+const TepButton = document.querySelector(".btn--Tep");
+const NouButton = document.querySelector(".btn--Nou");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -32,7 +32,7 @@ function handleTepClick() {
   changeImage("Tep");
 }
 
-function resizeTepButton() {
+function resizeon() {
   const computedStyle = window.getComputedStyle(TepButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
