@@ -2,8 +2,8 @@
 
 const titleElement = document.querySelector(".title");
 const buttonsContainer = document.querySelector(".buttons");
-const TepButton = document.querySelector(".btn--Tep");
-const NouButton = document.querySelector(".btn--Nou");
+const yesButton = document.querySelector(".btn--Tep");
+const noButton = document.querySelector(".btn--Nou");
 const catImg = document.querySelector(".cat-img");
 
 const MAX_IMAGES = 5;
@@ -11,15 +11,15 @@ const MAX_IMAGES = 5;
 let play = true;
 let noCount = 0;
 
-TepButton.addEventListener("click", handleTepClick);
+yesButton.addEventListener("click", handleTepClick);
 
-NouButton.addEventListener("click", function () {
+noButton.addEventListener("click", function () {
   if (play) {
     noCount++;
     const imageIndex = Math.min(noCount, MAX_IMAGES);
     changeImage(imageIndex);
     resizeTepButton();
-    updateNouButtonText();
+    updateNoButtonText();
     if (noCount === MAX_IMAGES) {
       play = false;
     }
@@ -32,12 +32,12 @@ function handleTepClick() {
   changeImage("Tep");
 }
 
-function resizeon() {
-  const computedStyle = window.getComputedStyle(TepButton);
+function resizeTepButton() {
+  const computedStyle = window.getComputedStyle(yesButton);
   const fontSize = parseFloat(computedStyle.getPropertyValue("font-size"));
   const newFontSize = fontSize * 1.6;
 
-  TepButton.style.fontSize = `${newFontSize}px`;
+  yesButton.style.fontSize = `${newFontSize}px`;
 }
 
 function generateMessage(noCount) {
@@ -59,5 +59,5 @@ function changeImage(image) {
 }
 
 function updateNoButtonText() {
-  TepButton.innerHTML = generateMessage(NouCount);
+  noButton.innerHTML = generateMessage(noCount);
 }
